@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Reflexión: Un Regalo</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: url("bosque.jpeg") no-repeat center center fixed;
+      background-size: cover;
+      font-family: 'Segoe UI', sans-serif;
+      color: white;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .reflection-box {
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 40px;
+      border-radius: 15px;
+      max-width: 900px;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+      z-index: 1;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      color: #ffb6c1;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 1.2em;
+      line-height: 1.6;
+    }
+
+    button {
+      margin-top: 25px;
+      padding: 12px 30px;
+      font-size: 1.2em;
+      background-color: #ff69b4;
+      border: none;
+      border-radius: 10px;
+      color: white;
+      cursor: pointer;
+      box-shadow: 0 0 15px rgba(255, 105, 180, 0.7);
+      z-index: 2;
+    }
+
+    .gift-container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0.5);
+      opacity: 0;
+      transition: all 1.2s ease-in-out;
+      z-index: 3;
+      text-align: center;
+    }
+
+    .gift-container img {
+      width: 250px;
+      border-radius: 20px;
+      box-shadow: 0 0 50px rgba(255, 182, 193, 0.7);
+    }
+
+    .gift-container p {
+      color: #ffe4e1; /* rosa claro pastel */
+      font-size: 1.5em;
+      margin-top: 15px;
+      font-weight: bold;
+      text-shadow: 0 0 5px #000;
+    }
+
+    .gift-container .close-button {
+      margin-top: 15px;
+      background-color: #dc143c;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 10px;
+      color: white;
+      font-size: 1em;
+      cursor: pointer;
+      box-shadow: 0 0 10px rgba(220, 20, 60, 0.7);
+    }
+
+    .show {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
+      filter: drop-shadow(0 0 20px #ffb6c1);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="reflection-box">
+    <h1>Caer no es el final</h1>
+    <p>
+      La vida no es un camino recto ni sencillo. Está llena de curvas inesperadas, caídas dolorosas y momentos en los que todo parece perder sentido. A veces, los errores que cometemos parecen gigantes que nos aplastan el alma. Tropezamos con decisiones mal tomadas, palabras que no debimos decir o silencios que dolieron más que cualquier grito.<br><br>
+
+      Y es fácil hundirse. Es fácil dejarse atrapar por la culpa, por el “¿y si…?”, por el miedo a volver a fallar. Pero la vida, por dura que sea, no espera a que estemos listos. Sigue adelante. Y tú, incluso con el corazón hecho pedazos, debes encontrar el valor para levantarte.<br><br>
+
+      No se trata de olvidar tus errores, sino de aprender de ellos. Cada caída lleva una lección, cada herida una historia. El dolor no te hace débil; te recuerda que estás vivo, que sientes, que te importa.<br><br>
+
+      La clave está en mirar al mundo de frente, incluso cuando tiembles. Caminar con la cabeza en alto, aunque por dentro estés reconstruyéndote. Porque el coraje no siempre se ve como una batalla épica… a veces, es simplemente abrir los ojos una mañana más y decidir que vas a intentarlo de nuevo.<br><br>
+
+      Así es la vida: dura, injusta a veces… pero también hermosa en su imperfección. Y tú estás hecho para más que rendirte. No eres tus errores. Eres lo que decides hacer después de ellos.
+    </p>
+    <button onclick="showGift()">Un regalo</button>
+  </div>
+
+  <div class="gift-container" id="gift">
+    <img src="rosas.jpg" alt="Rosa especial">
+    <p>Un presente por ser tú</p>
+    <button class="close-button" onclick="hideGift()">Cerrar</button>
+  </div>
+
+  <script>
+    function showGift() {
+      document.getElementById('gift').classList.add('show');
+    }
+
+    function hideGift() {
+      document.getElementById('gift').classList.remove('show');
+    }
+  </script>
+
+</body>
+</html>
